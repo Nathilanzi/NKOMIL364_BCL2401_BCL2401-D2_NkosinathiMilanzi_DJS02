@@ -8,3 +8,10 @@ form.addEventListener("submit", (event) => {
   const divider = entries.get("divider");
 
 });
+
+// Error handling: check if inputs are empty
+if (!dividend || !divider) {
+  result.classList.add("error-message")
+  result.innerText = "Division not performed. Both values are required in inputs. Try again.";
+  return;
+}
