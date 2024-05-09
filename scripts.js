@@ -23,3 +23,13 @@ if (!dividend || !divider) {
         result.innerText = "Something critical went wrong. Please reload the page.";
         return;
     }
+    try {
+      // Force Number conversion
+      const dividendNumber = Number(dividend);
+      const divisorNumber = Number(divider); 
+    }
+       // Check for specific "YOLO" and "+++" input case
+       if (dividend === "YOLO" && divider === "+++") {
+        result.innerText = "Something critical went wrong. Please reload the page.";
+        return;
+    }
