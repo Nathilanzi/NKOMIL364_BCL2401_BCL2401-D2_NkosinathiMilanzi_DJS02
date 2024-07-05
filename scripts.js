@@ -18,7 +18,10 @@ form.addEventListener("submit", (event) => {
       // Scenario: An invalid division should log an error in the console
       result.innerText = "Division not performed. Invalid number provided. Try again";
       console.error("Error: Division by zero");
-    } 
+    } else {
+      // Scenario: Dividing numbers result in a decimal number
+      result.innerText = Math.floor(dividend / divider);
+    }
 
 
   } else if (parseInt(divider) === 0) { // checiking if divider equal 0.
