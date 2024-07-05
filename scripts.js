@@ -21,19 +21,11 @@ form.addEventListener("submit", (event) => {
     } else {
       // Scenario: Dividing numbers result in a decimal number
       result.innerText = Math.floor(dividend / divider);
-    }
-
-
-  } else if (parseInt(divider) === 0) { // checiking if divider equal 0.
-    result.innerText = "Division not performed. Invalid number provided. Try again";
-    console.error("Error: Division by zero");
-
-    
-  } else if (dividend === '' || divider === '') { // checking if inputs are empty.
-    result.classList.add("error-message") // Changes result color to red.
-    result.innerText = "Division not performed. Both values are required in inputs. Try again";
-  } else {
-    result.innerText = Math.floor(dividend / divider); // Added Math.floor to round down the result to the nearest whole number.
+    } 
+  } catch (error) {
+    result.classList.add("critical-error");
+    result.innerText = "Something critical went wrong. Please reload the page";
+    console.error("Error:", error.message);
+    console.error(error.stack);
   }
-
 });
