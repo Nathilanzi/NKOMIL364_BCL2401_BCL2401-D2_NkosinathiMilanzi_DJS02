@@ -14,7 +14,11 @@ form.addEventListener("submit", (event) => {
     } else if (isNaN(dividend) || isNaN(divider)) {
       // Scenario: Providing anything that is not a number
       throw new Error("Non-numeric input provided");
-    }
+    } else if (parseInt(divider) === 0) {
+      // Scenario: An invalid division should log an error in the console
+      result.innerText = "Division not performed. Invalid number provided. Try again";
+      console.error("Error: Division by zero");
+    } 
 
 
   } else if (parseInt(divider) === 0) { // checiking if divider equal 0.
