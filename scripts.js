@@ -11,6 +11,9 @@ form.addEventListener("submit", (event) => {
       // Scenario: Validation when values are missing
       result.classList.add("error-message");
       result.innerText = "Division not performed. Both values are required in inputs. Try again";
+    } else if (isNaN(dividend) || isNaN(divider)) {
+      // Scenario: Providing anything that is not a number
+      throw new Error("Non-numeric input provided");
     }
 
 
